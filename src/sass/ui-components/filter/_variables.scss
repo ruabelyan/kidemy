@@ -1,0 +1,51 @@
+$filter-sizes: (
+  filter-base-box-shadow: 0 0 calculateRem(4px) 0,
+  filter-base-container-margin: calculateRem(16px),
+  filter-element-max-height: calculateRem(45px),
+  filter-base-container-padding-top: calculateRem(28px),
+  filter-container-width: calculateRem(220px),
+  filter-container-from-to-width: calculateRem(480px),
+  filter-container-margin: 0 calculateRem(16px) calculateRem(2px) 0,
+  filter-base-closed-height: calculateRem(70px),
+  filter-container-from-to-padding: calculateRem(16px),
+  filter-label-font-weight: 500,
+  filter-label-font-size: calculateRem(8px),
+  filter-label-letter-spacing: calculateRem(1.4px),
+  filter-animation-height: 0.7s,
+  filter-animation-padding-top: 0.2s,
+  button-toogle-width: calculateRem(131px),
+  clear-label-active-margin-right: calculateRem(20px),
+  clear-label-opacity: 0.5,
+  user-found-label-letter-spacing: calculateRem(1.4px),
+  user-found-label-margin-right: calculateRem(24px),
+  arrow-icon-container-width: calculateRem(20px),
+  arrow-icon-container-height: calculateRem(20px),
+  arrow-icon-container-margin: calculateRem(1px) calculateRem(14px) 0 calculateRem(18px),
+  arrow-icon-container-animation: 0.5,
+  checkbox-margin: calculateRem(2px) 0 calculateRem(2px) calculateRem(16px),
+  divider-checkbox-width: calculateRem(1214px),
+  divider-checkbox-border: 1px,
+  divider-checkbox-margin-top: calculateRem(26.5px),
+  control-buttons-margin: calculateRem(16px),
+  save-button-size: calculateRem(14px),
+  save-button-icon-width: calculateRem(16px),
+  filter-icon-border-radius: 7px
+);
+
+$filter-colors: (
+  filter-base-background-color: color(white),
+  filter-base-box-shadow: color(black-rgba),
+  filter-label-color: color(black-color),
+  clear-label-active-color: color(primary),
+  user-found-label-color: color(black-color),
+  divider-checkbox-color: color(alabaster),
+  filters-icon-bg: color(primary-transparent)
+);
+
+@function getFilterSizes($key) {
+  @return map-get($filter-sizes, $key);
+}
+
+@function getFilterColors($key) {
+  @return map-get($filter-colors, $key);
+}

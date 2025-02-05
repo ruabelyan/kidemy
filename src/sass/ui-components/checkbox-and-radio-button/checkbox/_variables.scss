@@ -1,0 +1,19 @@
+$checkbox-sizes: (
+  checkbox-width: calculateRem(16px),
+  checkbox-height: calculateRem(16px),
+  checkbox-border-width: 1px,
+  checkbox-border-radius: 4px,
+  checkbox-check-width: calculateRem(9.1px),
+);
+
+$checkbox-colors: (
+  checkbox-svg-color: color(white),
+);
+
+@function getCheckboxSizes($property) {
+  @return map-get($checkbox-sizes, $property);
+}
+
+@function getCheckboxColor($key) {
+  @return map-get($colors, $key);
+}

@@ -1,0 +1,110 @@
+@mixin generate-dropdown-styles {
+  .Select {
+    &--search {
+      width: 100%;
+    }
+
+    &--icon-container {
+      @include flex(center, center);
+    }
+
+    &--IconDown,
+    &--IconUp {
+      color: color(black-river) !important;
+    }
+
+    &--IconDown {
+      transform: rotate(180deg);
+    }
+  }
+
+  :global {
+    font-size: calculateRem(14px);
+    width: 100%;
+    padding: calculateRem(5.3px);
+
+    .css-qc6sy-singleValue {
+      color: color(evoca-purple) !important;
+    }
+
+    .css-1rhbuit-multiValue {
+      background-color: color(ev-light-gray) !important;
+      color: #fff !important;
+
+      .css-xb97g8 {
+        background-color: color(evoca-purple) !important;
+
+        &:hover {
+          color: color(ev-light-gray) !important;
+        }
+      }
+
+      .css-12jo7m5 {
+        color: color(black-river) !important;
+      }
+    }
+
+    .css-1s2u09g-control {
+      border: none !important;
+      background-color: transparent !important;
+    }
+
+    .css-4ljt47-MenuList {
+      padding: 0 !important;
+    }
+
+    .css-yt9ioa-option,
+    .css-9gakcf-option {
+      //   background-color: color(ev-light-gray) !important;
+      color: color(black-river) !important;
+      font-size: calculateRem(14px) !important;
+      line-height: calculateRem(24px) !important;
+      height: calculateRem(44px) !important;
+      padding: 12px 12px !important;
+      cursor: pointer !important;
+    }
+
+    .css-yt9ioa-option,
+    .css-1n7v3ny-option {
+      color: color(black-river) !important;
+      font-size: calculateRem(14px) !important;
+      line-height: calculateRem(24px) !important;
+      height: calculateRem(44px) !important;
+      padding: 12px 12px !important;
+      cursor: pointer !important;
+    }
+
+    .css-1n7v3ny-option {
+      background-color: color(ev-light-gray) !important;
+    }
+
+    .css-1insrsq-control {
+      background-color: transparent !important;
+      border-color: none !important;
+      border-width: 0px !important;
+    }
+
+    .css-9gakcf-option {
+      background-color: color(ev-light-gray) !important;
+    }
+
+    .css-1pahdxg-control {
+      // border-color: color(ev-light-gray) !important;
+      box-shadow: 0px 0px 0px 1px #6300dc59 !important;
+    }
+
+    .css-26l3qy-menu {
+      z-index: 999999999999999 !important;
+    }
+
+    .css-13cymwt-control:hover {
+      border-color: white !important;
+
+    }
+
+    .css-13cymwt-control {
+      border-color: white !important;
+
+    }
+  }
+}

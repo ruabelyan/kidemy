@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: calculateRem(20px);
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  color: #0A0A0A;
+  font-size: calculateRem(40px);
+  text-align: center;
+  margin-bottom: calculateRem(20px);
+  font-weight: 800;
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  gap: calculateRem(60px);
+}
+
+.blueAtomImage {
+  width: calculateRem(323px);
+  height: calculateRem(323px);
+  border-radius: calculateRem(20px);
+  margin-bottom: calculateRem(20px);
+}
+
+.animationWrapper {
+  display: flex;
+  flex-direction: row;  /* Change to row to align the images horizontally */
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: calculateRem(20px);
+}
+
+.animationImages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.imageGroup {
+  display: flex;
+  gap: calculateRem(10px);
+}
+
+.imageOpacity {
+  width: calculateRem(20px);
+  height: calculateRem(30px);
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .imageOpacity {
+    width: calculateRem(30px); /* Adjust size for medium screens */
+    height: calculateRem(40px); /* Adjust size for medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .imageOpacity {
+    width: calculateRem(50px);
+  height: calculateRem(60px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .imageOpacity {
+    width: calculateRem(70px);
+    height: calculateRem(80px);
+  }
+}
+
+.imageOpacity:hover {
+  opacity: 0.7;
+}
+
+.usersImageContainer {
+  margin-top: calculateRem(20px);
+  display: flex;
+  justify-content: center;
+}
+
+.usersImage {
+  width: calculateRem(250px);
+  height: calculateRem(52px);
+}
+
+.starsWrapper {
+  display: flex;
+  justify-content: center;
+  gap: calculateRem(10px);
+  margin-top: calculateRem(20px);
+}
+
+.starImage {
+  width: calculateRem(52px);
+  height: calculateRem(47px);
+}

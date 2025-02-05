@@ -1,0 +1,32 @@
+@import "./colors";
+// Function for getting color from colors map
+@function color($colorName) {
+  @return map-get($colors, $colorName);
+}
+
+// @function themeExists($key, $theme) {
+//   @if map-has-key($themeValues, $key) {
+//     @return map-has-key($map: map-get($themeValues, $key), $key: $theme);
+//   }
+
+//   @return null;
+// }
+
+// Function for get theme property value
+// @function getThemeValue($key, $theme) {
+//   @return map-get(map-get($themeValues, $key), $theme);
+// }
+
+@function rgba-to-rgb($rgba, $opacity: 0, $background: #fff) {
+  @if $opacity > 0 {
+    @if $opacity < 1 {
+      $opacity: $opacity * 100;
+    }
+    @return mix(
+      mix(rgb(red($rgba), green($rgba), blue($rgba)), $background, alpha($rgba) * 100%),
+      rgb(255, 255, 255),
+      $opacity
+    );
+  }
+  @return mix(rgb(red($rgba), green($rgba), blue($rgba)), $background, alpha($rgba) * 100%);
+}

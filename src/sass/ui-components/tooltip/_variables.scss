@@ -1,0 +1,22 @@
+$tooltip-sizes: (
+  tooltip-wrapper-width: calculateRem(93px),
+  tooltip-wrapper-max-width: calculateRem(349px),
+  tooltip-wrapper-height: calculateRem(34px),
+  tooltip-wrapper-padding: 0 calculateRem(8px) 0 calculateRem(8px),
+  tooltip-wrapper-border-radius: 8px,
+  tolltip-triangle-border-width: 5px,
+  tooltip-triangle-position-top: calculateRem(5px),
+  tooltip-triangle-position-right: calculateRem(-9px),
+  tooltip-triangle-position-bottom: calculateRem(-8px),
+  tooltip-triangle-position-left: calculateRem(-9px),
+  tooltip-offset: calculateRem(-8px),
+  tooltip-z-index: 99999999999
+);
+
+$tooltip-colors: (
+  tooltip-color: color(white)
+);
+
+@function getTooltipSizes($property) {
+  @return map-get($tooltip-sizes, $property);
+}

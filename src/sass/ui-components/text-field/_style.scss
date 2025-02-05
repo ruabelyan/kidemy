@@ -1,0 +1,189 @@
+$transition-duration: 0.2s;
+
+@mixin generate-text-field-styles {
+  .Explanation {
+    display: block;
+    margin: 0px;
+    max-width: calculateRem(280px);
+    word-break: break-word;
+    color: color(sambucus);
+    font-size: calculateRem(14px);
+    margin-top: calculateRem(6px);
+  }
+
+  .TextInputWrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: calculateRem(280px);
+    font-size: calculateRem(16px);
+    overflow: hidden;
+    border-radius: calculateRem(4px);
+    border: 1px solid color(satin-white);
+    background-color: color(white);
+    // Animation
+    transition: border $transition-duration, box-shadow $transition-duration;
+  }
+
+  .EyeIcon {
+    position: absolute;
+    top: 1rem;
+    right: 1.4rem;
+    width: 2rem;
+    color: color(black-river);
+    cursor: pointer;
+
+    > svg {
+      transform: scale(0.7);
+    }
+  }
+
+  // Input
+  .TextInputBaseInput {
+    width: 100%;
+
+    border: none;
+
+    &:disabled {
+      opacity: 0.9;
+    }
+
+    // Sizes
+    padding: calculateRem(9px) calculateRem(14px);
+    // min-height: calculateRem(44px);
+
+    // Reset
+    background-color: transparent;
+    box-sizing: border-box;
+    font-size: calculateRem(14px);
+    line-height: inherit;
+    margin: 0;
+    // border-top-color: transparent;
+    height: inherit;
+    box-shadow: none;
+    font-family: inherit;
+
+    // Animation
+    transition: border $transition-duration, box-shadow $transition-duration;
+
+    &--eye-icon {
+      font-size: 1.4rem !important;
+    }
+
+    &:focus,
+    &--filled {
+      color: color(sambucus);
+
+      outline: none;
+    }
+
+    &--with-two-start-icon {
+      padding-left: calculateRem(63px) !important;
+    }
+
+    &--with-two-end-icon {
+      padding-right: calculateRem(63px) !important;
+    }
+  }
+
+  // Icons
+
+  .StartIcon,
+  .EndIcon {
+    position: absolute;
+    transform: scale(0.8);
+    top: calculateRem(5px);
+    height: calculateRem(16px);
+    color: color(black-river);
+    @include center-flex;
+    width: calculateRem(24px);
+    height: calculateRem(24px);
+  }
+
+  .StartIcon {
+    left: calculateRem(9px);
+  }
+
+  .EndIcon {
+    right: calculateRem(18px);
+  }
+
+  .TextInputContainer {
+    &--label {
+      display: inline-block;
+      font-weight: 500;
+      font-size: calculateRem(14px);
+      line-height: calculateRem(20px);
+      margin-bottom: calculateRem(6px);
+    }
+
+    &--full-width {
+      width: 100%;
+
+      .TextInputWrapper {
+        max-width: initial;
+        margin-top: calculateRem(3px);
+      }
+
+      .Explanation {
+        max-width: initial;
+      }
+    }
+
+    &--focused {
+      .TextInputWrapper {
+        border-color: color(ev-illusion) !important;
+        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #f4ebff !important;
+      }
+    }
+
+    &--focused,
+    &--filled {
+      .EndIcon,
+      .StartIcon {
+        color: color(ev-purple);
+      }
+    }
+
+    &--error {
+      .EndIcon,
+      .StartIcon {
+        color: color(error-light);
+      }
+
+      .TextInputWrapper {
+        border-color: color(error-light) !important;
+        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #fee4e2 !important;
+      }
+
+      .Explanation {
+        color: color(error-dark) !important;
+      }
+    }
+
+    &--disabled {
+      opacity: 0.5;
+    }
+
+    &--withRightIcon {
+      .TextInputBaseInput {
+        padding-right: calculateRem(41px);
+      }
+    }
+
+    &--withLeftIcon {
+      .TextInputBaseInput {
+        padding-left: calculateRem(41px);
+      }
+
+      .TextInputBaseInput {
+        &:focus,
+        &--filled {
+          + .TextInputLabelContainer {
+            text-indent: 0;
+          }
+        }
+      }
+    }
+  }
+}

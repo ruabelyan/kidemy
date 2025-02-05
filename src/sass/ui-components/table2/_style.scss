@@ -1,0 +1,85 @@
+@mixin generate-table-styles {
+  .Table {
+    width: 100%;
+    background-color: color(white);
+    border: 1px solid #eaecf0;
+    /* Shadow/sm */
+
+    box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1),
+      0px 1px 2px rgba(16, 24, 40, 0.06);
+    border-radius: calculateRem(8px);
+
+    > table {
+      width: 100%;
+      border: none;
+      border-collapse: collapse;
+    }
+
+    &__Head {
+      text-align: start;
+      padding: calculateRem(16px);
+      font-size: calculateRem(12px);
+      line-height: calculateRem(18px);
+      color: color(flinstone);
+    }
+
+    &__Cell {
+      padding: 0px calculateRem(16px);
+      font-size: calculateRem(12px);
+      line-height: calculateRem(18px);
+      color: color(flinstone);
+      height: calculateRem(64px);
+    }
+
+    &__CellGray {
+      background-color: color(ev-light-gray);
+      border-bottom: 1px solid #eaecf0;
+      border-top: 1px solid #eaecf0;
+    }
+  }
+
+  .Pagination {
+    @include flex(center, center);
+    position: relative;
+    width: 100%;
+    height: calculateRem(68px);
+    padding: calculateRem(16px) calculateRem(24px);
+
+    &__BtnLeft,
+    &__BtnRight {
+      @include flex(null, center);
+      gap: calculateRem(6px);
+      position: absolute;
+      top: calculateRem(16px);
+      border: 1px solid #d0d5dd;
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+      border-radius: calculateRem(8px);
+      padding: calculateRem(8px) calculateRem(14px);
+      height: calculateRem(36px);
+      background-color: color(white);
+
+      &::after {
+        content: "" !important;
+      }
+
+      &:hover {
+        border: 1px solid #d0d5dd !important;
+        background-color: color(ev-light-gray);
+      }
+    }
+
+    &__BtnLeft {
+      left: calculateRem(24px);
+      > svg {
+        transform: rotate(-90deg);
+      }
+    }
+    &__BtnRight {
+      right: calculateRem(24px);
+
+      > svg {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+$typography-sizes: (
+  //Sizes for titles
+  h1-size: calculateRem(32px),
+  h1-line-height: calculateRem(42px),
+  h2-size: calculateRem(28px),
+  h2-line-height: calculateRem(36px),
+  h3-size: calculateRem(22px),
+  h3-line-height: calculateRem(30px),
+  h4-size: calculateRem(20px),
+  h4-line-height: calculateRem(28px),
+  h5-size: calculateRem(18px),
+  h5-line-height: calculateRem(26px),
+  h6-size: calculateRem(16px),
+  h6-line-height: calculateRem(24px),
+  //Sizes for paragraph
+  p1-size: calculateRem(20px),
+  p1-line-height: calculateRem(28px),
+  p2-size: calculateRem(18px),
+  p2-line-height: calculateRem(26px),
+  p3-size: calculateRem(16px),
+  p3-line-height: calculateRem(24px),
+  p4-size: calculateRem(14px),
+  p4-line-height: calculateRem(22px),
+  p5-size: calculateRem(12px),
+  p5-line-height: calculateRem(22px)
+);
+
+$typography-types: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p1', 'p2', 'p3', 'p4', 'p5';

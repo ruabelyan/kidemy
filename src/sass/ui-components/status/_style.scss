@@ -1,0 +1,47 @@
+@mixin generate-status-styles {
+  .Status {
+    @include flex(center, center);
+    gap: calculateRem(8px);
+    padding: calculateRem(2px) calculateRem(20px);
+    border-radius: calculateRem(16px);
+
+    &--success {
+      background: color(mint-cream);
+      color: color(greenish-cyan);
+      font-weight: 600;
+      font-size: calculateRem(12px);
+      line-height: calculateRem(18px);
+      fill: color(greenish-cyan);
+
+      &-WithBorder {
+        border: 1.5px solid color(tealish-green);
+      }
+    }
+
+    &--error {
+      background: color(soapstone);
+      color: color(pinkish-red);
+      font-weight: 600;
+      font-size: calculateRem(12px);
+      line-height: calculateRem(18px);
+      fill: color(pinkish-red);
+
+      &-WithBorder {
+        border: 1.5px solid color(bittersweet);
+      }
+    }
+
+    &--processing {
+      background: #f9f5ff;
+      color: #5000b0;
+      font-weight: 600;
+      font-size: calculateRem(12px);
+      line-height: calculateRem(18px);
+      fill: #5000b0;
+
+      &-WithBorder {
+        border: 1.5px solid;
+      }
+    }
+  }
+}

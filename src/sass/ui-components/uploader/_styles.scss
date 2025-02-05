@@ -1,0 +1,113 @@
+@mixin generate-uploader-styles {
+  .UploaderWrapper {
+    width: 100%;
+    position: relative;
+    border: dashed 1px #6400dc;
+    border-radius: calculateRem(8px);
+
+    min-width: calculateRem(150px);
+    height: calculateRem(90px);
+    display: flex;
+    margin-top: 5px;
+    // background-color: #6400dc;
+    color: #6400dc;
+
+    align-items: center;
+    justify-content: center;
+    padding: calculateRem(10px);
+    transition: all 0.3s;
+
+    &--fullWidth {
+      width: 100% !important;
+    }
+
+    p {
+      font-size: calculateRem(16px);
+      text-align: center;
+      margin: 0;
+      font-weight: bold;
+      margin-right: calculateRem(10px);
+    }
+
+    svg {
+      width: calculateRem(20px);
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: top left;
+      border-radius: calculateRem(7px);
+    }
+
+    &--active {
+      background: #8080801a;
+      height: calculateRem(80px);
+      border-width: 2px;
+    }
+
+    &--close {
+      position: absolute;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      right: calculateRem(35px);
+      top: calculateRem(7px);
+      transition: all 0.3s;
+
+      &-icon {
+        width: calculateRem(14px) !important;
+        color: color(evoca-purple);
+      }
+    }
+  }
+
+  .Content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: calculateRem(10px);
+    cursor: pointer;
+
+    span {
+      color: rgb(185, 180, 174);
+      font-size: 12px;
+    }
+  }
+
+  .Illustration {
+    width: calculateRem(80px) !important;
+  }
+
+  .UploadedWrapper {
+    height: calculateRem(80px);
+    padding: 0px;
+    border: 1px solid #6400dc;
+  }
+
+  .upload-wrapper p {
+    font-size: calculateRem(16px);
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    margin-right: calculateRem(10px);
+  }
+
+  .upload-wrapper svg {
+    width: calculateRem(20px);
+  }
+
+  .upload-wrapper .uploader_pdf {
+    object-fit: contain !important;
+    object-position: center !important;
+    background-color: #fff;
+  }
+
+  .EditIcon {
+    position: absolute;
+    top: 0;
+    right: calculateRem(5px);
+  }
+}

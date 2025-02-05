@@ -1,0 +1,14 @@
+$radio-button-sizes: (
+  radio-button-width: calculateRem(18px),
+  radio-button-height: calculateRem(18px),
+  radio-button-circle-width: calculateRem(16px),
+  radio-button-circle-height: calculateRem(16px),
+  radio-button-border-width: calculateRem(1px),
+  radio-checked-transition: all 0.2s ease,
+);
+
+@function getRadioButtonSizes($property) {
+  @return map-get($radio-button-sizes, $property);
+}
+
+$radio-button-colors: ();

@@ -1,0 +1,36 @@
+$dialog-sizes: (
+  dialog-width: calculateRem(940px),
+  dialog-height: calculateRem(200px),
+  dialog-wrapper-z-index: 99999,
+  dialog-container-sizes: calculateRem(80px),
+  dialog-padding: calculateRem(30px) calculateRem(34px) calculateRem(30px)
+    calculateRem(34px),
+  dialog-border-radius: calculateRem(8px),
+  dialog-span-font: 500,
+  dialog-btns-margin: calculateRem(81px) 0 calculateRem(24px) 0,
+  dialog-margin: calculateRem(16px),
+  dialog-z-index: 99999,
+  dialog-size-md-padding: calculateRem(18px) calculateRem(16px) 0
+    calculateRem(24px),
+  dialog-dark-max-width: calculateRem(600px),
+  dialog-content-width: calculateRem(312px),
+  dialog-content-height: calculateRem(213px),
+  dialog-actions-margin: calculateRem(16px) 0 calculateRem(16px) 0,
+  btn-label-margin-top: calculateRem(6px),
+  dialog-break-margin: calculateRem(16px) 0 0 calculateRem(-5px),
+  dialog-close-button-width: calculateRem(12px),
+);
+
+$dialog-colors: (
+  dialog-overlay-bg: color(dark),
+  dialog-label-color: color(astronaut),
+  dialog-dark-label-color: color(white),
+  dialog-close-color: color(white),
+  dialog-dark-background-color: color(shark),
+  button-color: color(selago),
+  dialog-divider-color: color(outer-space),
+);
+
+@function getDialogSizes($property) {
+  @return map-get($dialog-sizes, $property);
+}

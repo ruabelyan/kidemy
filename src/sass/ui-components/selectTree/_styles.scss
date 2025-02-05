@@ -1,0 +1,253 @@
+@mixin generate-select-tree-styles {
+  .Select {
+    position: relative;
+    &-Parent {
+      & > span {
+        padding-right: getSelectTreeSizes(select--parent-padding-right);
+      }
+    }
+
+    &-Tree {
+      display: block;
+      padding: getSelectTreeSizes(select--tree-padding);
+      width: 100%;
+      box-sizing: border-box;
+      cursor: default;
+
+      > ul:nth-child(1) {
+        > li.Select-Tree-List__Item:nth-child(1) {
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      .Select-Tree-List__Item-Chain {
+        display: none;
+      }
+
+      .Select-Tree {
+        padding-right: 0;
+        padding-bottom: 0;
+        width: 100%;
+
+        .Select-Tree-List__Item-Chain {
+          display: block;
+        }
+
+        ul:nth-child(1) {
+          li.Select-Tree-List__Item:nth-child(1) {
+            &::before {
+              display: block;
+            }
+          }
+        }
+      }
+
+      ul {
+        li {
+          // cursor: pointer;
+
+          i.Select-Tree-List__Item-Number {
+            transition: opacity getSelectTreeSizes(animation-linear) linear;
+            will-change: opacity;
+          }
+
+          span.Select-Tree-List__Item-Label-Inner {
+            transition: color getSelectTreeSizes(animation-linear) linear;
+            will-change: color;
+          }
+
+          span.Select-Tree-List__Item-Inner:hover {
+            span.Select-Tree-List__Item-Label-Inner {
+              @include theme(color, item-label-inner-color);
+            }
+
+            i.Select-Tree-List__Item-Number {
+              opacity: getSelectTreeSizes(item-number-opacity);
+            }
+          }
+        }
+
+        ul {
+          padding-top: getSelectTreeSizes(ul--ul-padding-top);
+        }
+      }
+    }
+
+    &-Tree-List {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    &-Tree-List__Item {
+      position: relative;
+      top: 0;
+      z-index: getSelectTreeSizes(select--tree-list-item-z-index);
+      @include flex(null, null, $flex-wrap: wrap);
+      padding: getSelectTreeSizes(select--tree-list-item-padding);
+      width: 100%;
+      min-height: getSelectTreeSizes(select--tree-list-item-min-height);
+      box-sizing: border-box;
+      font-family: 'Roboto';
+      font-size: getSelectTreeSizes(select--tree-list-item-font-size);
+      line-height: getSelectTreeSizes(select--tree-list-item-line-height);
+      letter-spacing: 0;
+      text-align: left;
+      @include theme(color, select--tree-list-color);
+      opacity: getSelectTreeSizes(select--tree-list-item-opacity);
+      transition: all getSelectTreeSizes(animation-linear) linear;
+
+      &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        width: getSelectTreeSizes(select--tree-list-item-before-width);
+        height: getSelectTreeSizes(select--tree-list-item-before-height);
+        @include theme(background-color, select--tree-list-item-before-background-color);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: getSelectTreeSizes(select--tree-list-item-after-z-index);
+        display: block;
+        width: getSelectTreeSizes(select--tree-list-item-after-width);
+        height: getSelectTreeSizes(select--tree-list-item-after-height);
+        @include theme(background-color, select--tree-list-item-after-background-color);
+        opacity: 0;
+        transition: opacity getSelectTreeSizes(animation-linear) linear;
+        will-change: opacity;
+      }
+
+      &-Parent {
+        & > span {
+          padding-right: getSelectTreeSizes(select---parent-padding-right);
+        }
+      }
+
+      ul {
+        padding-top: getSelectTreeSizes(select--parent-ul-padding-right);
+
+        li {
+          position: relative;
+          left: 0;
+          top: 0;
+        }
+
+        li:last-child {
+          .Select-Tree-List__Item-Chain {
+            &::before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 0;
+              display: block;
+              width: getSelectTreeSizes(select--parent-item-chain-width);
+              height: getSelectTreeSizes(select--parent-item-chain-height);
+              @include theme(background-color, select--item-chain-color);
+            }
+          }
+        }
+      }
+
+      &:hover::after {
+        @include theme(opacity, disabled-opacity);
+      }
+    }
+
+    &-Tree-List__Item-Chain {
+      position: absolute;
+      left: getSelectTreeSizes(select--tree-list__item-chain-left);
+      top: 0;
+      display: block;
+      width: getSelectTreeSizes(select--tree-list__item-chain-width);
+      height: getSelectTreeSizes(select--tree-list__item-chain-height);
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: getSelectTreeSizes(select--tree-list__item-chain-before-width);
+        height: getSelectTreeSizes(select--tree-list__item-chain-before-height);
+        @include theme(background-color, select--tree-list__item-chain-background-color);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        display: block;
+        width: getSelectTreeSizes(select--tree-list__item-chain-after-width);
+        height: getSelectTreeSizes(select--tree-list__item-chain-after-height);
+        @include theme(background-color, select--tree-list__item-chain-background-color);
+      }
+    }
+
+    &-Tree-List__Item-Inner {
+      @include flex();
+      overflow: hidden;
+      width: getSelectTreeSizes(select--tree-list__item-inner-width);
+    }
+
+    &-Tree-List__Item-Arrow {
+      position: absolute;
+      right: 0;
+      top: 0;
+      @include flex(center, center);
+      width: getSelectTreeSizes(select--tree-list__item-arrow-width);
+      height: getSelectTreeSizes(select--tree-list__item-arrow-height);
+      transition: background getSelectTreeSizes(animation-linear) linear;
+      will-change: background;
+
+      &,
+      svg {
+        cursor: pointer;
+      }
+
+      svg {
+        @include theme(fill, select--tree-list__item-arrow-svg-fill);
+      }
+
+      &:hover {
+        background: rgba(#f4f5f8, 1);
+      }
+    }
+
+    &-Tree-List__Item-Number {
+      display: inline-block;
+      list-style: normal;
+      margin-left: getSelectTreeSizes(select--tree-list__item-number-margin);
+      font-style: normal;
+      font-size: getSelectTreeSizes(select--tree-list__item-number-font-size);
+      @include theme(color, select--tree-list__item-number-color);
+      opacity: getSelectTreeSizes(select--tree-list__item-number-opacity);
+      white-space: nowrap;
+    }
+
+    &-Tree-List__Item-Label {
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    &-Tree-List__Item-Label-Inner {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      cursor: pointer;
+      @include dots-after-text();
+    }
+
+    // TREE END
+  }
+}

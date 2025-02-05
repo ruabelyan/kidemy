@@ -1,0 +1,73 @@
+@mixin generate-datetimepicker-styles {
+  .TimePickerBase {
+    :global {
+      .react-datepicker {
+        padding: getDateTimePickerSizes(react-datepicker-padding);
+        box-sizing: border-box;
+        height: getDateTimePickerSizes(react-datepicker-height);
+
+        &__navigation--next {
+          left: getDateTimePickerSizes(react-datepicker-navigation-next-position-left);
+        }
+
+        &-time__input {
+          @include flex();
+          margin: getDateTimePickerSizes(react-time-input-margin);
+
+          >div {
+            margin: getDateTimePickerSizes(react-time-picker-input-column);
+          }
+        }
+      }
+    }
+
+    .TimePickerDivider {
+      position: absolute;
+      width: getDateTimePickerSizes(divider-position-width);
+      bottom: getDateTimePickerSizes(divider-position-bottom);
+      left: getDateTimePickerSizes(divider-position-left);
+      border: 1px solid gray;
+    }
+
+    .TimePickerDividerCloseState {
+      display: none;
+    }
+
+    &.TimePickerBaseWithoutTime {
+      :global {
+        .react-datepicker {
+          width: getDateTimePickerSizes(time-picker-base-without-time-width);
+          height: getDateTimePickerSizes(time-picker-base-without-time-height);
+        }
+      }
+    }
+
+    .TimePickerButton {
+      position: absolute;
+      min-width: getDateTimePickerSizes(timepicker-button-width);
+      top: initial;
+      left: initial;
+      bottom: getDateTimePickerSizes(timepicker-button-position-bottom);
+      right: getDateTimePickerSizes(timepicker-button-position-right);
+      font-size: getDateTimePickerSizes(timepicker-button-font-size);
+    }
+  }
+
+  .TimePickerWrapper {
+    @include flex();
+    position: relative;
+    margin: getDateTimePickerSizes(time-picker-wrapper-margin);
+
+    .TimeContainer {
+      width: getDateTimePickerSizes(time-container-width);
+      height: getDateTimePickerSizes(time-container-height);
+      position: absolute;
+      top: getDateTimePickerSizes(time-container-position);
+      background-color: rgba(#6400DC, 0.1);
+    }
+
+    .ScrollContent {
+      margin: getDateTimePickerSizes(scroll-content-margin);
+    }
+  }
+}

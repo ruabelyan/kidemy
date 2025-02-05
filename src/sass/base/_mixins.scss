@@ -1,0 +1,194 @@
+// This mixins is used for generating box-shadow like border for preventing size changing
+
+@mixin generateBorderWithBoxShadow($color-variable, $size: 0.1rem) {
+  box-shadow: color($color-variable), 0px 0px 0px $size;
+}
+
+// Use flexbox
+
+@mixin flex(
+  $justify-content: null,
+  $align-items: null,
+  $direction: null,
+  $flex-wrap: null
+) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $direction;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin grid() {
+  display: grid;
+}
+
+// Center with position: absolute;
+
+@mixin center-absolute {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+// Center with display: flex
+
+@mixin center-flex {
+  @include flex(center, center);
+}
+
+// Dots after text
+
+@mixin dots-after-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin animation-start {
+  animation: dialog-animation 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards !important;
+}
+
+@mixin animation-exit {
+  animation: dialog-animation-exit 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)
+    forwards;
+}
+
+@mixin reset-button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+:global {
+  @keyframes dialog-animation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes dialog-animation-exit {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+}
+@mixin button-reset {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+@mixin list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
+@mixin theme($property, $key, $inlineExtra: null, $postExtra: null, $opacity: null, $useRgb: false) {
+  @each $theme in $themes {
+    @if (themeExists($key, $theme)) {
+      $value: null;
+
+      @if ($opacity) {
+        @if ($useRgb == true) {
+          $value: rgba-to-rgb(rgba(#001e3c, $opacity));
+        } @else {
+          $value: rgba(#001e3c, $opacity);
+        }
+
+        :root {
+          --theme-#{$theme}-#{$key}--#{$opacity * 10}: $value;
+        }
+      } @else {
+        $value: #001e3c;
+      }
+
+      @if ($theme == 'default') {
+        :global(body) & {
+          #{$property}: #{$inlineExtra} #{$value} #{$postExtra};
+
+          @if ($opacity) {
+            #{$property}: #{$inlineExtra} var(--theme-#{$theme}-#{$key}--#{$opacity * 10}, #{$value}) #{$postExtra};
+          } @else {
+            #{$property}: #{$inlineExtra} var(--theme-#{$theme}-#{$key}, #{$value}) #{$postExtra};
+          }
+        }
+      } @else {
+        :global(.theme-#{$theme}) &,
+        &:global(.theme-#{$theme}) {
+          #{$property}: #{$inlineExtra} #{$value} #{$postExtra};
+
+          @if ($opacity) {
+            #{$property}: #{$inlineExtra} var(--theme-#{$theme}-#{$key}--#{$opacity * 10}, #{$value}) #{$postExtra};
+          } @else {
+            #{$property}: #{$inlineExtra} var(--theme-#{$theme}-#{$key}, #{$value}) #{$postExtra};
+          }
+        }
+      }
+    } @else {
+      @error "Property #{$key} doesn't exist in #{$theme}";
+    }
+  }
+}
+
+// This mixin used for generation sass variables theme mapping for future using
+@mixin generateThemeMappings($themeName, $newThemeMap) {
+  $themes: append($themes, $themeName, $separator: comma) !global;
+
+  @each $key, $value in $newThemeMap {
+    @if not map-has-key($themeValues, $key) {
+      $themeValues: map-merge(
+        $themeValues,
+        (
+          $key: (
+            $themeName: $value
+          )
+        )
+      ) !global;
+    } @else {
+      $existingKeyMap: map-get($themeValues, $key);
+
+      @if not map-get($existingKeyMap, $themeName) {
+        $newKeyMap: map-merge(
+          $existingKeyMap,
+          (
+            $themeName: $value
+          )
+        );
+        $themeValues: map-merge(
+          $themeValues,
+          (
+            $key: $newKeyMap
+          )
+        ) !global;
+      }
+    }
+  }
+}
+
+// This mixin used for generation css variables
+@mixin generateThemeVariables {
+  :root {
+    @each $key, $val in $themeValues {
+      @each $theme in $themes {
+        @if (themeExists($key, $theme)) {
+          --theme-#{$theme}-#{$key}: #{#001e3c};
+        }
+      }
+    }
+  }
+}
+@mixin rotate-animation($duration: 1.5s) {
+  animation: rotate-animation $duration linear infinite;
+}

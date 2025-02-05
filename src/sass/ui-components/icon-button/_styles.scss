@@ -1,0 +1,48 @@
+@mixin generate-icon-button-styles {
+  .IconButtonBase {
+    @include center-flex();
+    width: getIconButtonSizes(icon-button-width);
+    height: getIconButtonSizes(icon-button-height);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    &--icon {
+      @include theme(color, color(sambucus));
+      width: getIconButtonSizes(icon-button-icon-width);
+      height: getIconButtonSizes(icon-button-icon-height);
+      svg {
+        width: inherit;
+        height: inherit;
+      }
+      @include flex("center");
+    }
+    &--dark {
+      background-color: transparent;
+      &:hover {
+        @include theme(background-color, color(evoca-n));
+      }
+    }
+    &--light {
+      @include theme(background-color, color(evoca-n));
+      @include theme(box-shadow, color(evoca-n), 0 2px 4px 0);
+      &:hover {
+        @include theme(
+          border,
+          color(evoca-n),
+          getIconButtonSizes(light-border-size) solid
+        );
+        @include theme(color, color(evoca-n));
+      }
+    }
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+  .AcionBtns {
+    position: sticky;
+    z-index: 100;
+    top: 0;
+  }
+}

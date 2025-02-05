@@ -1,0 +1,36 @@
+$edit-form-in-sizes: (
+  edit-form-width: 100%,
+  edit-form-half-width: 50%,
+  min-height: calculateRem(208px),
+  edit-form-base-content-column-gap: calculateRem(16px),
+  edit-form-padding: calculateRem(24px) calculateRem(8px) calculateRem(16px) calculateRem(8px),
+  edit-form-title-height: calculateRem(44px),
+  edit-form-title-font-size: calculateRem(18px),
+  edit-header-span-font-weight: 600,
+  edit-form-title-width: calculateRem(300px),
+  edit-form-content-width: 100%,
+  edit-form-field-flex: 50%,
+  edit-form-field-width: 50%,
+  edit-form-field-margin: calculateRem(12px),
+  edit-form-buttons-margin: 0 calculateRem(3px) 0 0,
+  edit-form-header-padding: 0 calculateRem(8px),
+  field-header-font-size: calculateRem(12px),
+  field-header-height: calculateRem(14px),
+  field-header-margin: 0 0 calculateRem(3px) 0,
+  field-header-font-weight: 500
+);
+
+$edit-form-in-colors: (
+  edit-form-background: color(white),
+  edit-form-title-color: color(black-river),
+  border-color: color(catskill-white),
+  field-header-color: color(indigo)
+);
+
+@function getEditFormInSizes($key) {
+  @return map-get($edit-form-in-sizes, $key);
+}
+
+@function getEditFormInColors($key) {
+  @return map-get($edit-form-in-colors, $key);
+}

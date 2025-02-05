@@ -1,0 +1,48 @@
+.main-wrapper {
+    padding: calculateRem(20px)
+}
+
+.carousel-container {
+    width: 100%;
+    height: calculateRem(330px);
+}
+
+.carousel-item {
+    padding: 10px
+}
+
+.rdtPicker {
+    right: -40px;
+    top: 40px;
+}
+
+.error-message {
+    padding-top: calculateRem(4px);
+    font-size: calculateRem(14px);
+    color: #f04438
+}
+
+.active {
+    border: 2px solid color(tealish-green);
+    padding-left: calculateRem(20px);
+    padding-right: calculateRem(20px);
+    border-radius: calculateRem(10px);
+    color: color(tealish-green);
+}
+
+.inactive {
+    border: 2px solid color(error-dark);
+    padding-left: calculateRem(20px);
+    padding-right: calculateRem(20px);
+    border-radius: calculateRem(10px);
+    color: color(error-dark);
+}
+
+.emptyStateContainer {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px;
+    flex-direction: column
+}

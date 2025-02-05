@@ -1,0 +1,64 @@
+$datepicker-sizes: (
+  datepicker-width: calculateRem(276px),
+  datepicker-border-radius: 4px,
+  datepicker-min-height: calculateRem(322px),
+  datepicker-shadow-sizes: 3px 3px 6px 0,
+  datepicker-margin-top: calculateRem(8px),
+  datepicker-input-space-left: calculateRem(10px),
+  datepicker-input-space-top: calculateRem(53px),
+  datepicker-padding: 0 calculateRem(16px) calculateRem(6px) calculateRem(16px),
+  datepicker-navigation-height: calculateRem(12px),
+  datepicker-navigation-width: calculateRem(6px),
+  datepicker-navigation-top: calculateRem(30px),
+  datepicker-navigation-margin: calculateRem(25px),
+  //
+  datepicker-navigation--nextMargin: calculateRem(25px),
+  datepicker-navigation--leftMargin: calculateRem(25px),
+  datePicker-month-container--borderRadius: 4px,
+  datePicker-wrapper-two-month-min-width: calculateRem(585px),
+  datePicker-month-container--leftMargin: calculateRem(25px),
+  datePicker-month-container-min-height: calculateRem(375px),
+  datePicker-z-index: 1000,
+  datePicker-padding: calculateRem(0px) calculateRem(16px) calculateRem(0px),
+  datePicker-wrapper-width: calculateRem(280px),
+  datePicker-wrapper-min-height: calculateRem(314px),
+  datePicker-wrapper-padding-bottom: calculateRem(6px),
+  datePicker-month-title-font-size: calculateRem(16px),
+  datePicker-month-title-padding: calculateRem(24px) calculateRem(0px),
+  datePicker-day--name: calculateRem(10px),
+  datePicker-week-font-size: calculateRem(9px),
+  datePicker-week-name-font-size: calculateRem(10px),
+  datePicker-week-name-min-width: calculateRem(40px),
+  datePicker-weeks-margin-bottom: calculateRem(6px),
+  datePicker-month--size: calculateRem(14px),
+  datePicker-day-width: calculateRem(40px),
+  datePicker-day-height: calculateRem(40px),
+  datePicker-last-week-margin-top: calculateRem(10px),
+  datePicker-current-day-margin: calculateRem(0px) calculateRem(-1px),
+  // datePicker-day-padding: calculateRem(9px) calculateRem(0px),
+  datePicker-selected-in-range-end: 0 4px 4px 0,
+  datePicker-selected-in-range-start: 4px 0 0 4px,
+  datePicker-days-height: calculateRem(40px)
+);
+
+@function getDatePickerSizes($property) {
+  @return map-get($datepicker-sizes, $property);
+}
+
+$datepicker-colors: (
+  datepicker-day-names-color: color(silver-color),
+  datepicker-day-color: color(gray-color),
+  datepicker-container-bg: color(white),
+  datepicker-input-border--primary: color(stratos),
+  datepicker-bg-color--primary: color(pelorous),
+  datepicker-secondary-bg-color--primary: color(aqua-spring),
+  datepicker-color--primary: color(white),
+  datepicker-text-color--primary: color(gray),
+  datepicker-day-color--primary: color(silver),
+  datepicker-box-shadow--primary: color(carbon-fiber),
+  datepicker-current-day--primary: color(oxford-blue),
+  datepicker-day--primary: color(azure-approx),
+  datepicker-day-selected-row--primary: color(azure-approx-opacity-10),
+  datepicker-selected-days--primary: color(shuttl-gray),
+  datepicker-week-color--primary: color(silver)
+);

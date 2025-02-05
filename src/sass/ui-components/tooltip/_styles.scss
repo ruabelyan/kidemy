@@ -1,0 +1,118 @@
+@mixin generate-tooltip-styles {
+  .TooltipContainer {
+    position: fixed;
+    z-index: getTooltipSizes(tooltip-z-index);
+    &.TooltipContainerClosed {
+      z-index: -(getTooltipSizes(tooltip-z-index));
+    }
+    &.TooltipContainerHidden {
+      display: none;
+    }
+    & {
+      .TooltipWrapper,
+      .TooltipContainer {
+        opacity: 0;
+        z-index: -1;
+      }
+    }
+    &--exit {
+      .TooltipWrapper,
+      .TooltipContainer {
+        @include animation-exit;
+      }
+    }
+    &--enterDone {
+      .TooltipWrapper,
+      .TooltipContainer {
+        @include animation-start;
+      }
+    }
+    .TooltipContainer {
+      opacity: 0;
+    }
+    .TooltipWrapper {
+      box-sizing: border-box;
+      padding: getTooltipSizes(tooltip-wrapper-padding);
+      border-radius: getTooltipSizes(tooltip-wrapper-border-radius);
+      max-width: getTooltipSizes(tooltip-wrapper-max-width);
+      min-width: getTooltipSizes(tooltip-wrapper-width);
+      min-height: getTooltipSizes(tooltip-wrapper-height);
+      width: fit-content;
+      width: -moz-fit-content; //for Mozilla
+      @include flex(center, center);
+      text-align: left;
+      word-break: break-all;
+      position: relative;
+      h5 {
+        font-size: calculateRem(12px);
+        padding-left: 4px;
+      }
+      &--dark {
+        background: color(evoca);
+        div {
+          color: white;
+          font-weight: 600;
+          font-size: calculateRem(12px);
+        }
+        svg {
+          path {
+            fill: color(evoca);
+          }
+        }
+      }
+      &--white {
+        background: color(white);
+        box-shadow: 0px 4px 16px rgb(121 61 196 / 56%);
+        svg {
+          path {
+            fill: color(evoca);
+          }
+        }
+        div {
+          color: color(evoca);
+          font-weight: 600;
+          font-size: calculateRem(12px);
+        }
+      }
+      .TooltipTriangle {
+        position: absolute;
+        div {
+          transform: rotate(180deg);
+        }
+      }
+      .Tooltip-bottom {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .Tooltip-left {
+        transform: translate(0%, -50%) rotate(90deg);
+        top: 50%;
+        right: calculateRem(-15px);
+        .div {
+          right: 0;
+          transform: rotate(90deg);
+        }
+      }
+      .Tooltip-top {
+        left: 50%;
+        transform: translate(-50%, 100%);
+        bottom: calculateRem(15px);
+        div {
+          transform: rotate(360deg);
+        }
+      }
+      .Tooltip-right {
+        transform: translate(0%, -50%) rotate(-90deg);
+        left: calculateRem(-15px);
+        top: 50%;
+        .div {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+    &--exitDone {
+      z-index: -(getTooltipSizes(tooltip-z-index));
+    }
+  }
+}

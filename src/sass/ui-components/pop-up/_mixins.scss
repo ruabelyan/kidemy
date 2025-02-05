@@ -1,0 +1,53 @@
+@mixin getDialogWithActionsStyles {
+  .DialogHeaderWithClose {
+    @include flex(space-between, center);
+
+    .HeaderTitle {
+      h3 {
+        @include theme(color, color(evoca));
+        font-weight: normal;
+
+        margin: 0;
+      }
+    }
+
+    button {
+      width: 1.8rem;
+      height: 1.8rem;
+      color: color(evoca-purple);
+    }
+  }
+
+  .DialogContent {
+    width: getDialogSizes(dialog-content-width);
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .DialogWithActionsDivider {
+    margin: getDialogSizes(dialog-break-margin);
+    width: 100%;
+    @include theme(border, color(evoca), solid 1px);
+  }
+
+  .DialogActions {
+    @include flex(space-between, center);
+    margin: getDialogSizes(dialog-actions-margin);
+    .BtnsActions {
+      @include flex();
+      button {
+        @include flex(null, center, $direction: column);
+        span {
+          @include theme(color, color(evoca));
+        }
+      }
+      .BtnLabel {
+        @include theme(color, color(evoca));
+        margin-top: getDialogSizes(btn-label-margin-top);
+      }
+    }
+  }
+}

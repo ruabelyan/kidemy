@@ -1,0 +1,49 @@
+@mixin generate-tableHead-styles {
+  .TableHead {
+    @include flex();
+    background-color: transparent;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-weight: getTableHeadSizes(table-head-font-weight);
+    font-size: getTableHeadSizes(table-head-font-size);
+    // @include theme(color, red, $opacity: 0.65);
+    text-transform: capitalize;
+    margin: 0 auto;
+    padding: getTableHeadSizes(table-head-padding);
+    min-height: getTableHeadSizes(table-head-height);
+    border: 1px solid #eae9e9;
+    border-top-color: white;
+    border-bottom-color: white;
+    border-left-color: white;
+    color: #525252;
+
+    .TableHeadContainer {
+      @include flex(null, center);
+      min-height: getTableHeadSizes(table-head-container-height);
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    .IconArrow {
+      @include flex(center, center, $direction: column);
+      min-width: getTableHeadSizes(table-arrow-icon-sizes);
+      min-height: getTableHeadSizes(table-arrow-icon-sizes);
+
+      .IconUp {
+        @include theme(fill, primary, $opacity: 0.65);
+        margin-bottom: getTableHeadSizes(table-icon-up-margin);
+      }
+
+      .IconDown {
+        transform: rotate(180deg);
+        @include theme(fill, primary, $opacity: 0.65);
+      }
+
+      .IconDisabled {
+        opacity: getTableHeadSizes(icon-disabled-opacity);
+      }
+    }
+  }
+}
