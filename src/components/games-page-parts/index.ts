@@ -1,2 +1,6 @@
 export {default as UsersPart} from './UsersPart'
 export {default as MarketsPart} from './MarketsPart'
+export {default as VideoPlayer} from './VideoPlayer'
+export {default as Slider} from './Slider'
+export {default as ContentSection} from './ContentSection'
+export {default as FooterContent} from './FooterContent'

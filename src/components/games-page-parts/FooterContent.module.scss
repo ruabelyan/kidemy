@@ -1,0 +1,108 @@
+.contentSection {
+    /* Overall Section Styles */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 4%;
+  }
+  
+  .flexContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5.25rem;
+    gap: 1rem;
+  }
+  
+  .textContainer {
+    width: 100%;
+    max-width: 600px;
+    flex: 1;
+  }
+  
+  .textBox {
+    margin-bottom: -20px;
+    text-align: left;
+  }
+  
+  .mainTitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    color: #28292C;
+    margin-bottom: 25px;
+  }
+  
+  .descriptionText {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #444095;
+    line-height: 1.5;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+  
+  .storeButton {
+    width: 200px;
+    height: 70px;
+  }
+  
+  .storeImage {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .imageSection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .monsterImage {
+    width: 266px;
+    height: 266px;
+    object-fit: cover;
+  }
+  
+  @media (min-width: 640px) {
+    .mainTitle {
+      font-size: 25px;
+    }
+    .descriptionText {
+      font-size: 18px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .mainTitle {
+      font-size: 35px;
+    }
+    .descriptionText {
+      font-size: 22px;
+    }
+  
+    .monsterImage {
+      width: 346px;
+      height: 346px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .monsterImage {
+      width: 386px;
+      height: 386px;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .contentSection {
+      margin: 0 82px;
+    }
+  }
+  

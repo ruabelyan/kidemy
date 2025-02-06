@@ -1,0 +1,149 @@
+.contentSection {
+    /* First Section */
+    .flexContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5.25rem;
+      margin-bottom: 5.25rem;
+    }
+  
+    .tarakanImage {
+      width: 100%;
+      max-width: 752px;
+      height: auto;
+      object-fit: cover;
+    }
+  
+    .descriptionContainer {
+      margin-top: 1.5rem;
+      background-image:url('https://kidemy.com/svg/BackgroundBlueUnion.svg') ;
+      background-repeat: no-repeat;
+    height: calculateRem(550px);
+    width: calculateRem(550px);
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+  
+    .descriptionText {
+      max-width: 300px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      color: #28292C;
+    }
+  
+    /* Second Section */
+    .logoContainer {
+      display: flex;
+      justify-content: center;
+      margin-top: 7.25rem;
+    }
+  
+    .logoImage {
+      width: 509px;
+      height: 120px;
+      cursor: pointer;
+    }
+  
+    /* Third Section */
+    .iconContainer {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 7rem;
+      margin-bottom: 7rem;
+    }
+  
+    .backgroundBac {
+      position: absolute;
+      width: 100%;
+      height: 1400px;
+      top: -40px;
+      z-index: -10;
+    }
+  
+    .redAtom {
+      width: 142px;
+      height: 142px;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+  
+    .learningGamesImage {
+      width: 190px;
+      height: 65px;
+    }
+  
+    /* Responsive Breakpoints */
+    @media (min-width: 640px) {
+      .tarakanImage {
+        width: 339px;
+        height: 244px;
+      }
+  
+      .descriptionText {
+        font-size: 13px;
+        max-width: 240px;
+      }
+    }
+  
+    @media (min-width: 768px) {
+      .tarakanImage {
+        width: 439px;
+        height: 284px;
+      }
+  
+      .descriptionText {
+        font-size: 14px;
+        max-width: 270px;
+      }
+    }
+  
+    @media (min-width: 1024px) {
+      .tarakanImage {
+        width: 600px;
+        height: 450px;
+      }
+  
+      .descriptionText {
+        font-size: 18px;
+        max-width: 360px;
+      }
+  
+      .logoImage {
+        display: block;
+      }
+  
+      .backgroundBac {
+        display: none;
+      }
+  
+      .redAtom {
+        width: 324px;
+        height: 323px;
+      }
+  
+      .learningGamesImage {
+        width: 360px;
+        height: 100px;
+      }
+    }
+  
+    @media (min-width: 1280px) {
+      .descriptionText {
+        font-size: 24px;
+        max-width: 460px;
+      }
+  
+      .learningGamesImage {
+        width: 700px;
+        height: 146px;
+      }
+    }
+  }
+  

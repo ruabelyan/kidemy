@@ -1,0 +1,32 @@
+/* Ensure the container for the slider stretches to 100% of its parent */
+.slider-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Make sure slick items display horizontally */
+.slick-slider {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Keeps aspect ratio intact */
+}
+
+/* Styling for arrows and dots */
+.slick-prev, .slick-next {
+  z-index: 1;
+}
+
+.slick-dots {
+  bottom: -30px; /* Adjusts position of the dots */
+}
