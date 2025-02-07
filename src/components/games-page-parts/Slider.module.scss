@@ -1,32 +1,16 @@
-/* Ensure the container for the slider stretches to 100% of its parent */
 .slider-container {
-  width: 100%;
+  width: 100%; /* Ensure container takes full width */
   margin: 0 auto;
 }
 
-/* Make sure slick items display horizontally */
-.slick-slider {
-  display: flex;
-  justify-content: center;
+.slider-item img {
+  width: 100%;  /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .slick-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; /* Ensures the slides are displayed in a row */
+  justify-content: center; /* Centers the images */
 }
 
-.slider-item img {
-  width: 100%;
-  height: auto;
-  object-fit: cover; /* Keeps aspect ratio intact */
-}
 
-/* Styling for arrows and dots */
-.slick-prev, .slick-next {
-  z-index: 1;
-}
-
-.slick-dots {
-  bottom: -30px; /* Adjusts position of the dots */
-}

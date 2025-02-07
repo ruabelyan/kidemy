@@ -7,8 +7,9 @@
   }
   
   .flexContainer {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin-top: 5.25rem;
     gap: 1rem;
@@ -39,6 +40,7 @@
     font-size: 16px;
     color: #444095;
     line-height: 1.5;
+    padding-bottom: calculateRem(30px);
   }
   
   .buttonContainer {
@@ -58,10 +60,6 @@
   }
   
   .imageSection {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   
   .monsterImage {

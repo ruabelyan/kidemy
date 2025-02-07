@@ -20,7 +20,7 @@ const ContentSection = () => {
               rel="noopener noreferrer" 
               className={styles.storeButton}
             >
-              <img 
+              <img        
                 alt="Play Market" 
                 src="https://kidemy.com/_next/image?url=%2Fimages%2FPlayMarket.webp&w=640&q=75" 
                 className={styles.storeImage}

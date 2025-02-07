@@ -7,12 +7,12 @@ const VideosPage = () => {
    <>
    <VideoPlayer url='https://www.youtube.com/watch?v=dLRvYEv46F0&t=35s'/>
     <UsersPart/>
-    {/* <Slider/> */}
+    <Slider/>
     <MarketsPart/>
     <ContentSection/>
    <VideoPlayer url='https://www.youtube.com/watch?v=KeRZ2ufx0tc'/>
    <FooterContent/>
-
+ 
     </>
   );
 };

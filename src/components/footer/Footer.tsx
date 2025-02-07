@@ -17,7 +17,8 @@ const Footer = () => {
     </div>
     <hr className={styles.divider} />
     <p className={styles.text}>
-      &copy; {new Date().getFullYear()} Kidemy CJSC. All rights reserved.
+      {/* &copy;  Kidemy CJSC. All rights reserved. */}
+      Copyright Kidemy CJSC, {new Date().getFullYear()}. All rights reserved.
       <br />
       <a href="/privacy_policy" className={styles.link}>Privacy Policy</a> &nbsp;|&nbsp;
       <a href="/terms_of_use" className={styles.link}>Terms of Use</a>
