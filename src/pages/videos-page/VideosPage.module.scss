@@ -37,6 +37,12 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
+  @media (max-width: 768px) {
+    .text {
+      font-size: calculateRem(20px);
+    }
+  }
+
   
   @media (min-width: 1024px) {
     .videoGrid {

@@ -57,13 +57,25 @@
   .imageOpacity {
     width: calculateRem(30px); /* Adjust size for medium screens */
     height: calculateRem(40px); /* Adjust size for medium screens */
-  }
+  }  
 }
+@media (max-width: 768px) {
+  .title {
+    font-size: calculateRem(22px) !important;
+    font-weight: 600;
+  }  
+}
+
 
 @media (min-width: 1024px) {
   .imageOpacity {
     width: calculateRem(50px);
   height: calculateRem(60px);
+  }
+}
+@media (max-width: 1024px) {
+  .imageContainer {
+    display: block;
   }
 }
 

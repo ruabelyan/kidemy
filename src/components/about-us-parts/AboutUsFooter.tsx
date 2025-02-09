@@ -24,9 +24,9 @@ const AboutUsFooter = () => {
       />
 
       {/* <h4 className={styles.messageHeader}>Message to <br /> Parents</h4> */}
+      <h4 className={styles.hiddenMessageHeader}>Message to Parents</h4>
 
       <div className={styles.bgContainer}>
-        <h4 className={styles.hiddenMessageHeader}>Message to Parents</h4>
 
         <p className={styles.description}>
           From the moment they're born, today's children are bombarded with screens. From parents proudly snapping photos to showing cartoons and games on devices – we can’t deny that this is all part of a child's development journey! And as caregivers, our mission is to monitor how much screen time our kids have and what content they consume during that time - after all, those moments will shape their future.
@@ -37,8 +37,6 @@ const AboutUsFooter = () => {
         <img
           alt="Tablet Image"
           src="https://kidemy.com/_next/image?url=%2Fimages%2FPlanshet.webp&w=3840&q=75"
-          width="3000"
-          height="2000"
           decoding="async"
           loading="lazy"
           className={styles.tabletImage}

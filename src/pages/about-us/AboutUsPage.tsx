@@ -48,16 +48,6 @@ const AboutUsPage = () => {
             We also collaborate with musicians, kid psychologists, marketers, content writers, video makers, and translators. We believe that all materials and methodologies of the games are correct and will benefit the right development of children.
           </p>
           <div className={styles.flexContainer}>
-            <img 
-              alt="Yellow Dog" 
-              srcSet="/_next/image?url=%2Fimages%2FYellowDog.webp&amp;w=3840&amp;q=75 1x" 
-              src="/_next/image?url=%2Fimages%2FYellowDog.webp&amp;w=3840&amp;q=75" 
-              width="2782" 
-              height="4177" 
-              decoding="async" 
-              loading="lazy" 
-              className={styles.yellowDogImageSmall} 
-            />
             <p className={styles.description}>
               Our main priority is to make the best quality games in the industry. Parents download our games from the Apple App Store and Google Play!
             </p>
@@ -72,10 +62,7 @@ const AboutUsPage = () => {
           </p>
         </div>
       </div>
-    <div style={{padding:'50px '}}>
     <Slider/>
-
-    </div>
     <div>
     <AboutUsFooter/>
     </div>

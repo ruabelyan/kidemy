@@ -62,7 +62,7 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className="slider-container" >
+    <div className="slider-container"  style={{padding:20}}>
       <Slider  {...settings}>
         <div className="slider-item">
           <img

@@ -45,6 +45,8 @@
 
 .textContainer {
   margin-top: -20px;
+  justify-content: end;
+    display: flex;
   @media (max-width: 768px) {
     margin-top: 0;
   }
@@ -62,6 +64,7 @@
   color: #28292c;
   @media (min-width: 1024px) {
     font-size: 35px;
+
   }
 }
 
@@ -69,8 +72,11 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 16px;
+  text-align: center;
+
   color: #444095;
   @media (min-width: 1024px) {
     font-size: 25px;
+    max-width: calculateRem(600px);
   }
 }

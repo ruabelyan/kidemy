@@ -2,7 +2,7 @@
     /* First Section */
     .flexContainer {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
       margin-top: 5.25rem;
       margin-bottom: 5.25rem;
@@ -91,6 +91,21 @@
         max-width: 240px;
       }
     }
+    @media (max-width: 768px) {
+      .flexContainer {
+        flex-direction: column;
+      }  
+      .descriptionContainer {
+      height: calculateRem(350px);
+      width: calculateRem(380px);
+      }
+
+      .logoImage {
+        max-width: calculateRem(300px);
+        height: auto;
+      }
+    }
+
   
     @media (min-width: 768px) {
       .tarakanImage {

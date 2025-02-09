@@ -1,11 +1,26 @@
 import { HeaderBg, Logo } from "@/assets";
 import { useNavigate } from "react-router-dom";
 import style from './Header.module.scss'
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { useLocation  } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation ();
 
+  console.log('history',location.pathname);
+
+  const paths = {
+    games: '/home',
+    kidsVideos: '/kids-videos',
+    kidsBlog: '/kids-blog',
+    aboutUs: '/about-us',
+    contactUs: '/contact-us',
+  };
+
+  const isActive = (path) => location.pathname === path;
+
+  console.log('isActive',isActive(paths.games))
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -46,7 +61,7 @@ const Header = () => {
         {/* Close Icon */}
         <div className={style.closeIcon}>
           <img 
-            src="/images/Close.webp" 
+            src="https://kidemy.com/_next/image?url=%2Fimages%2FClose.webp&w=32&q=75" 
             alt="Close Menu Icon" 
             className={style.closeIconImg} 
             onClick={() => setIsMobileMenuOpen(false)} 
@@ -56,11 +71,11 @@ const Header = () => {
         {/* Mobile Navigation */}
         <nav className={style.mobileNav}>
           <ul className={style.mobileNavList}>
-            <li className={style.mobileNavItem}>Games</li>
-            <li onClick={() => navigate('kids-videos')} className={style.mobileNavItem}>Kids Videos</li>
-            <li onClick={() => navigate('kids-blog')} className={style.mobileNavItem}>Kids Blog</li>
-            <li onClick={() => navigate('about-us')} className={style.mobileNavItem}>About us</li>
-            <li onClick={() => navigate('contact-us')} className={style.mobileNavItem}>Contact Us</li>
+            <li  onClick={() => navigate('games')}  className={`${style.mobileNavItem} ${isActive(paths.games) ? style.activeItem : ''}`}>Games</li>
+            <li onClick={() => navigate('kids-videos')} className={`${style.mobileNavItem} ${isActive(paths.kidsVideos) ? style.activeItem : ''}`}>Kids Videos</li>
+            <li onClick={() => navigate('kids-blog')} className={`${style.mobileNavItem} ${isActive(paths.kidsBlog) ? style.activeItem : ''}`}>Kids Blog</li>
+            <li onClick={() => navigate('about-us')} className={`${style.mobileNavItem} ${isActive(paths.aboutUs) ? style.activeItem : ''}`}>About us</li>
+            <li onClick={() => navigate('contact-us')} className={`${style.mobileNavItem} ${isActive(paths.contactUs) ? style.activeItem : ''}`}>Contact Us</li>
           </ul>
         </nav>
       </div>

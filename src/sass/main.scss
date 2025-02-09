@@ -38,3 +38,8 @@
 .slick-dots :hover {
   background: rgb(240, 226, 245)
 }
+
+.slick-list {
+  overflow: scroll;
+  width: 100%;
+}

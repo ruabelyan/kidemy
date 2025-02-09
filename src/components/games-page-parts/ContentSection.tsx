@@ -30,12 +30,6 @@ const ContentSection = () => {
       {/* Third Section */}
       <div className={styles.iconContainer}>
         <img 
-          alt="Background Bac" 
-          id="blue" 
-          src="/svg/BackgroundBac.svg" 
-          className={styles.backgroundBac}
-        />
-        <img 
           alt="Red Atom" 
           src="https://kidemy.com/_next/image?url=%2Fimages%2Fyellow.png&w=384&q=75" 
           className={styles.redAtom}

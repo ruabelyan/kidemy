@@ -98,11 +98,11 @@
   
   .description {
     font-family: 'Poppins', sans-serif;
-    font-size: 30px ;
-    line-height: 22px;
+    font-size: 30px !important;
+    line-height: 35px;
     color: #28292C;
     text-align: center;
-    padding: 0 calculateRem(80px);
+    padding: 0 calculateRem(180px);
   
     @media (min-width: 640px) {
       font-size: 20px;
@@ -131,14 +131,3 @@
     }
   }
   
-  @media (max-width: 768px) {
-    .flexContainer {
-flex-direction: column;
-  }
-  .description {
-    font-size: 15px;
-    padding: 10px;
-    }
-}
-
-
