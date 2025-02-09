@@ -2,13 +2,13 @@
     position: relative;
     z-index: 2;
     margin-bottom: 20px;
-    height: 16rem; /* h-64 */
+    height: 8rem; /* h-64 */
     width: 100%;
     background-color: #9C29B2;
   }
   .headerBottomItem {
     position: absolute;
-    top: 6rem;
+    top: 8rem;
     width: 100%;
   }
   /* Medium Screens */
@@ -192,7 +192,7 @@
   
   @media (min-width: 1280px) {
     .bottomBanner {
-      margin-top: -35px;
+      margin-top: -20px;
     }
   }
 
