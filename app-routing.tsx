@@ -15,12 +15,12 @@ const AppLayout = () => {
       {isLoading && <Loader />}
 
       <Routes>
-        <Route path="/home" element={<Games/>} />
+        <Route path="/" element={<Games/>} />
         <Route path="/kids-videos" element={<VideosPage/>} />
         <Route path="/contact-us" element={<ContactForm/>} />
         <Route path="/about-us" element={<AboutUsPage/>} />
         <Route path="/kids-blog" element={<KidsBlogPage/>} />
-        <Route path="*" element={<Navigate to="/home" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
   );

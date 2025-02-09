@@ -11,7 +11,7 @@ const Header = () => {
   console.log('history',location.pathname);
 
   const paths = {
-    games: '/home',
+    games: '/',
     kidsVideos: '/kids-videos',
     kidsBlog: '/kids-blog',
     aboutUs: '/about-us',
@@ -33,12 +33,12 @@ const Header = () => {
         src={Logo}
         alt="Logo" 
         className={style.logo} 
-        onClick={() => navigate('/home')}
+        onClick={() => navigate('/')}
       />
       {/* Desktop Navigation */}
       <nav className={style.navLinks}>
         <ul className={style.navList}>
-        <li className={style.mobileNavItem} onClick={() => navigate('/home')}>Games</li>
+        <li className={style.mobileNavItem} onClick={() => navigate('/')}>Games</li>
             <li onClick={() => navigate('/kids-videos')} className={style.mobileNavItem}>Kids Videos</li>
             <li onClick={() => navigate('/kids-blog')} className={style.mobileNavItem}>Kids Blog</li>
             <li onClick={() => navigate('/about-us')} className={style.mobileNavItem}>About us</li>
