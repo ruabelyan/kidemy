@@ -29,7 +29,7 @@ const VideoPlayer = ({ url }: { url: string }) => {
     width: "100%",
     playerVars: {
       start: startTime,
-      autoplay: 1, // Autoplay video
+      autoplay: 0, // Autoplay video
       rel: 0, // Don't show related videos
       showinfo: 0, // Hide video info (deprecated but still helps)
       modestbranding: 1, // Hide YouTube logo
