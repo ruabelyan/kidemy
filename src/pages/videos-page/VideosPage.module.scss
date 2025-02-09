@@ -84,3 +84,9 @@
     }
   }
   
+  .response-container {
+    display: flex;
+    justify-content: center;
+    color: #9c28b2;
+    font-size: calculateRem(20px);
+  }

@@ -4,7 +4,7 @@ import AppLayout from "./../app-routing";
 import "./App.css";
 import { Footer, Header } from "./components";
 import createStore from "./rtk/store";
-import { AlertContainer, DialogProvider } from "./ui-components";
+import { AlertContainer } from "./ui-components";
 
 function App() {
   return (
@@ -12,21 +12,13 @@ function App() {
       <Provider store={createStore()}>
         <div className="App">
           <BrowserRouter>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                minHeight: "100vh",
-                justifyContent: "space-between",
-              }}
-            >
+            <div className="wrapper">
               <Header />
               <AppLayout />
               <Footer />
             </div>
           </BrowserRouter>
           <AlertContainer autoCloseDelay={5000} autoClose={false} />
-          <DialogProvider />
         </div>
       </Provider>
     </div>
